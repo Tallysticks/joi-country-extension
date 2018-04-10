@@ -12,11 +12,11 @@ npm install --save joi-country-extension
 
 ```js
 const BaseJoi = require('joi')
-const JoiIMONumberExtension = require('joi-imo-number-extension')
-const Joi = BaseJoi.extend(JoiIMONumberExtension)
+const JoiCountryExtension = require('joi-country-extension')
+const Joi = BaseJoi.extend(JoiCountryExtension)
 
-const schema = Joi.string().imoNumber()
-const result = await schema.validate('IMO 7035341')
+const schema = Joi.string().country()
+const result = await schema.validate('gb')
 
-console.log(result) // IMO 7035341
+console.log(result) // GB
 ```
