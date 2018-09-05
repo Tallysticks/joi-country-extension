@@ -1,6 +1,6 @@
 {
   "name": "joi-country-extension",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Joi extension for validation of ISO 3166-1 alpha-2 country codes",
   "homepage": "https://tallysticks.io",
   "bugs": {
