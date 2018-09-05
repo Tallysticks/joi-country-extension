@@ -7,7 +7,7 @@ module.exports = joi => {
     base: joi.string(),
     name: 'string',
     language: {
-      invalidFormat: 'needs to be a valid ISO 3166-1 alpha-2 country code',
+      invalidIsoCountryFormat: 'needs to be a valid ISO 3166-1 alpha-2 country code',
     },
     pre(value, state, options) {
       return value
