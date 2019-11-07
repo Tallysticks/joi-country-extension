@@ -7,7 +7,7 @@ module.exports = joi => {
     base: joi.string(),
     type: 'country',
     messages: {
-      'country.base': '"value" needs to be a valid ISO 3166-1 alpha-2 country code',
+      'country.base': '"{{#label}}" needs to be a valid ISO 3166-1 alpha-2 country code',
     },
     validate(value, helpers) {
       if (countries.isValid(value)) {
