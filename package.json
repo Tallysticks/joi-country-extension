@@ -1,6 +1,6 @@
 {
   "name": "joi-country-extension",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "A Joi extension for validation of ISO 3166-1 alpha-2 country codes",
   "homepage": "https://tallysticks.io",
   "bugs": {
@@ -15,6 +15,10 @@
     {
       "name": "Edward Ruchevits",
       "email": "edward@tallysticks.io"
+    },
+    {
+      "name": "Ciro Santillo",
+      "email": "ciro1693@gmail.com"
     }
   ],
   "main": "src",
@@ -23,15 +27,15 @@
     "url": "https://github.com/Tallysticks/joi-country-extension.git"
   },
   "scripts": {
-    "test": "node_modules/.bin/mocha test"
+    "test": "mocha test"
   },
   "dependencies": {
-    "i18n-iso-countries": "3.7.5"
+    "i18n-iso-countries": "^6.7.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
-    "mocha": "^3.5.3",
-    "joi": "^13.1.1"
+    "joi": "^17.4.0",
+    "mocha": "^3.5.3"
   }
 }

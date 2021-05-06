@@ -2,29 +2,26 @@
 
 const countries = require('i18n-iso-countries')
 
-module.exports = joi => {
+const extension = (Joi) => {
   return {
-    base: joi.string(),
-    name: 'string',
-    language: {
-      IsoCountryInvalidFormat: 'needs to be a valid ISO 3166-1 alpha-2 country code',
+    type: "string",
+    base: Joi.string(),
+    messages: {
+      'IsoCountryInvalidFormat': '{{#label}} needs to be a valid ISO 3166-1 alpha-2 country code',
     },
-    pre(value, state, options) {
-      return value
-    },
-    rules: [
-      {
-        name: 'country',
-        setup(params) {
-          this._flags.country = true
-        },
-        validate(params, value, state, options) {
-          if (countries.isValid(value)) {
-            return value.toUpperCase()
+    rules: {
+      country: {
+        validate(value, helpers) {
+          if (!countries.isValid(value)) {
+            return helpers.error('IsoCountryInvalidFormat')
           }
-          return this.createError('string.IsoCountryInvalidFormat', { value }, state, options)
-        },
-      },
-    ],
+
+          return value.toUpperCase()
+        }
+      }
+    }
+
   }
 }
+
+module.exports = extension;
